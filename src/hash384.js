@@ -275,5 +275,7 @@ var HASH384 = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.HASH384 = HASH384;
+    module.exports = {
+        HASH384: HASH384
+    };
 }

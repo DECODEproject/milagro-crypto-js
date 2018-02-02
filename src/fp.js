@@ -512,5 +512,7 @@ var FP = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.FP = FP;
+    module.exports = {
+        FP: FP
+    };
 }

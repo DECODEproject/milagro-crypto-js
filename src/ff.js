@@ -1002,5 +1002,7 @@ var FF = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.FF = FF;
+    module.exports = {
+        FF: FF
+    };
 }

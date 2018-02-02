@@ -17,7 +17,6 @@
     under the License.
 */
 
-
 var CTX = function(input_parameter) {
     "use strict";
 
@@ -414,6 +413,7 @@ var CTX = function(input_parameter) {
 
     ctx.config = CTXLIST[input_parameter];
 
+    // Set BIG parameters
     prepareModule("BIG");
     prepareModule("DBIG", "big");
 
@@ -429,6 +429,7 @@ var CTX = function(input_parameter) {
     // Set Elliptic Curve parameters
     if (typeof ctx.config["CURVE"] !== "undefined") {
         prepareModule("ROM_CURVE_" + ctx.config["CURVE"], "rom_curve", "ROM_CURVE");
+
         prepareModule("ROM_FIELD_" + ctx.config["FIELD"], "rom_field", "ROM_FIELD");
 
         prepareModule("FP");

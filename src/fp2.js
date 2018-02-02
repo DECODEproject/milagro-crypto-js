@@ -403,5 +403,7 @@ var FP2 = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.FP2 = FP2;
+    module.exports = {
+        FP2: FP2
+    };
 }

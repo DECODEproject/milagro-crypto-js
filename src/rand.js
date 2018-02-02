@@ -184,5 +184,7 @@ var RAND = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.RAND = RAND;
+    module.exports = {
+        RAND: RAND
+    };
 }

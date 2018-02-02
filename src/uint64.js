@@ -61,5 +61,7 @@ var UInt64 = function() {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.UInt64 = UInt64;
+    module.exports = {
+        UInt64: UInt64
+    };
 }

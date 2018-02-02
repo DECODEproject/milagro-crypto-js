@@ -546,5 +546,7 @@ var NHS = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.NHS = NHS;
+    module.exports = {
+        NHS: NHS
+    };
 }

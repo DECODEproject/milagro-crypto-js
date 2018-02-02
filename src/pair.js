@@ -739,5 +739,7 @@ var PAIR = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.PAIR = PAIR;
+    module.exports = {
+        PAIR: PAIR
+    };
 }

@@ -1112,5 +1112,7 @@ var MPIN = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.MPIN = MPIN;
+    module.exports = {
+        MPIN: MPIN
+    };
 }

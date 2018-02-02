@@ -548,5 +548,7 @@ var FP4 = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.FP4 = FP4;
+    module.exports = {
+        FP4: FP4
+    };
 }

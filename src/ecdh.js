@@ -86,44 +86,19 @@ var ECDH = function(ctx) {
 
             if (sha == this.SHA256) {
                 H = new ctx.HASH256();
-                H.process_array(A);
-
-                if (n > 0) {
-                    H.process_num(n);
-                }
-
-                if (B != null) {
-                    H.process_array(B);
-                }
-
-                R = H.hash();
             } else if (sha == this.SHA384) {
                 H = new ctx.HASH384();
-                H.process_array(A);
-
-                if (n > 0) {
-                    H.process_num(n);
-                }
-
-                if (B != null) {
-                    H.process_array(B);
-                }
-
-                R = H.hash();
             } else if (sha == this.SHA512) {
                 H = new ctx.HASH512();
-                H.process_array(A);
-
-                if (n > 0) {
-                    H.process_num(n);
-                }
-
-                if (B != null) {
-                    H.process_array(B);
-                }
-
-                R = H.hash();
             }
+
+            if (n > 0) {
+                H.process_num(n);
+            }
+            if (B != null) {
+                H.process_array(B);
+            }
+            R = H.hash();
 
             if (R.length == 0) {
                 return null;
@@ -803,5 +778,7 @@ var ECDH = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.ECDH = ECDH;
+    module.exports = {
+        ECDH: ECDH
+    };
 }

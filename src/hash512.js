@@ -277,5 +277,7 @@ var HASH512 = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.HASH512 = HASH512;
+    module.exports = {
+        HASH512: HASH512
+    };
 }

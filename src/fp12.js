@@ -772,5 +772,7 @@ var FP12 = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.FP12 = FP12;
+    module.exports = {
+        FP12: FP12
+    };
 }

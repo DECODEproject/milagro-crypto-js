@@ -198,5 +198,7 @@ var HASH256 = function() {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.HASH256 = HASH256;
+    module.exports = {
+        HASH256: HASH256
+    };
 }

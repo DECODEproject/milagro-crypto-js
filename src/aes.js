@@ -705,5 +705,7 @@ var AES = function() {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.AES = AES;
+    module.exports = {
+        AES: AES
+    };
 }

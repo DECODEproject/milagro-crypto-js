@@ -19,30 +19,8 @@
 
 /* Fixed Data in ROM - Field and Curve parameters */
 
-var ROM_CURVE_ANSSI,
-    ROM_CURVE_BLS383,
-    ROM_CURVE_BLS461,
-    ROM_CURVE_FP256BN,
-    ROM_CURVE_FP512BN,
-    ROM_CURVE_BN254,
-    ROM_CURVE_BN254CX,
-    ROM_CURVE_BRAINPOOL,
-    ROM_CURVE_C25519,
-    ROM_CURVE_C41417,
-    ROM_CURVE_ED25519,
-    ROM_CURVE_GOLDILOCKS,
-    ROM_CURVE_HIFIVE,
-    ROM_CURVE_NIST256,
-    ROM_CURVE_NIST384,
-    ROM_CURVE_NIST521,
-    ROM_CURVE_NUMS256E,
-    ROM_CURVE_NUMS256W,
-    ROM_CURVE_NUMS384E,
-    ROM_CURVE_NUMS384W,
-    ROM_CURVE_NUMS512E,
-    ROM_CURVE_NUMS512W;
-
-ROM_CURVE_ANSSI = function() {
+var ROM_CURVE_ANSSI = function() {
+    "use strict";
 
     var ROM_CURVE_ANSSI = {
 
@@ -59,7 +37,8 @@ ROM_CURVE_ANSSI = function() {
     return ROM_CURVE_ANSSI;
 };
 
-ROM_CURVE_BLS383 = function() {
+var ROM_CURVE_BLS383 = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_BLS383 = {
@@ -140,7 +119,8 @@ ROM_CURVE_BLS383 = function() {
     return ROM_CURVE_BLS383;
 };
 
-ROM_CURVE_BLS461 = function() {
+var ROM_CURVE_BLS461 = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_BLS461 = {
@@ -221,7 +201,8 @@ ROM_CURVE_BLS461 = function() {
     return ROM_CURVE_BLS461;
 };
 
-ROM_CURVE_FP256BN = function() {
+var ROM_CURVE_FP256BN = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_FP256BN = {
@@ -303,7 +284,8 @@ ROM_CURVE_FP256BN = function() {
     return ROM_CURVE_FP256BN;
 };
 
-ROM_CURVE_FP512BN = function() {
+var ROM_CURVE_FP512BN = function() {
+    "use strict";
 
     /* Fixed Data in ROM - Field and Curve parameters */
 
@@ -387,7 +369,8 @@ ROM_CURVE_FP512BN = function() {
     return ROM_CURVE_FP512BN;
 };
 
-ROM_CURVE_BN254 = function() {
+var ROM_CURVE_BN254 = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_BN254 = {
@@ -468,7 +451,8 @@ ROM_CURVE_BN254 = function() {
     return ROM_CURVE_BN254;
 };
 
-ROM_CURVE_BN254CX = function() {
+var ROM_CURVE_BN254CX = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_BN254CX = {
@@ -552,7 +536,8 @@ ROM_CURVE_BN254CX = function() {
     return ROM_CURVE_BN254CX;
 };
 
-ROM_CURVE_BRAINPOOL = function() {
+var ROM_CURVE_BRAINPOOL = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     /* Note that the original curve has been transformed to an isomorphic curve with A=-3 */
@@ -573,7 +558,8 @@ ROM_CURVE_BRAINPOOL = function() {
     return ROM_CURVE_BRAINPOOL;
 };
 
-ROM_CURVE_C25519 = function() {
+var ROM_CURVE_C25519 = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_C25519 = {
@@ -590,12 +576,14 @@ ROM_CURVE_C25519 = function() {
     return ROM_CURVE_C25519;
 };
 
-ROM_CURVE_C41417 = function() {
+var ROM_CURVE_C41417 = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_C41417 = {
 
         // C41417 curve
+
         CURVE_A: 1,
         CURVE_B_I: 3617,
         CURVE_B: [0xE21, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0],
@@ -604,11 +592,11 @@ ROM_CURVE_C41417 = function() {
         CURVE_Gy: [0x22, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0],
 
     };
-
     return ROM_CURVE_C41417;
 };
 
-ROM_CURVE_ED25519 = function() {
+var ROM_CURVE_ED25519 = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_ED25519 = {
@@ -627,7 +615,8 @@ ROM_CURVE_ED25519 = function() {
     return ROM_CURVE_ED25519;
 };
 
-ROM_CURVE_GOLDILOCKS = function() {
+var ROM_CURVE_GOLDILOCKS = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_GOLDILOCKS = {
@@ -643,7 +632,8 @@ ROM_CURVE_GOLDILOCKS = function() {
     return ROM_CURVE_GOLDILOCKS;
 };
 
-ROM_CURVE_HIFIVE = function() {
+var ROM_CURVE_HIFIVE = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_HIFIVE = {
@@ -661,7 +651,8 @@ ROM_CURVE_HIFIVE = function() {
     return ROM_CURVE_HIFIVE;
 };
 
-ROM_CURVE_NIST256 = function() {
+var ROM_CURVE_NIST256 = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_NIST256 = {
@@ -678,7 +669,8 @@ ROM_CURVE_NIST256 = function() {
     return ROM_CURVE_NIST256;
 };
 
-ROM_CURVE_NIST384 = function() {
+var ROM_CURVE_NIST384 = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_NIST384 = {
@@ -694,7 +686,8 @@ ROM_CURVE_NIST384 = function() {
     return ROM_CURVE_NIST384;
 };
 
-ROM_CURVE_NIST521 = function() {
+var ROM_CURVE_NIST521 = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_NIST521 = {
@@ -711,7 +704,8 @@ ROM_CURVE_NIST521 = function() {
     return ROM_CURVE_NIST521;
 };
 
-ROM_CURVE_NUMS256E = function() {
+var ROM_CURVE_NUMS256E = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_NUMS256E = {
@@ -729,7 +723,8 @@ ROM_CURVE_NUMS256E = function() {
     return ROM_CURVE_NUMS256E;
 };
 
-ROM_CURVE_NUMS256W = function() {
+var ROM_CURVE_NUMS256W = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_NUMS256W = {
@@ -747,7 +742,8 @@ ROM_CURVE_NUMS256W = function() {
     return ROM_CURVE_NUMS256W;
 };
 
-ROM_CURVE_NUMS384E = function() {
+var ROM_CURVE_NUMS384E = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_NUMS384E = {
@@ -764,7 +760,8 @@ ROM_CURVE_NUMS384E = function() {
     return ROM_CURVE_NUMS384E;
 };
 
-ROM_CURVE_NUMS384W = function() {
+var ROM_CURVE_NUMS384W = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_NUMS384W = {
@@ -782,7 +779,8 @@ ROM_CURVE_NUMS384W = function() {
     return ROM_CURVE_NUMS384W;
 };
 
-ROM_CURVE_NUMS512E = function() {
+var ROM_CURVE_NUMS512E = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_NUMS512E = {
@@ -799,7 +797,8 @@ ROM_CURVE_NUMS512E = function() {
     return ROM_CURVE_NUMS512E;
 };
 
-ROM_CURVE_NUMS512W = function() {
+var ROM_CURVE_NUMS512W = function() {
+    "use strict";
     /* Fixed Data in ROM - Field and Curve parameters */
 
     var ROM_CURVE_NUMS512W = {

@@ -428,5 +428,7 @@ var GCM = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.GCM = GCM;
+    module.exports = {
+        GCM: GCM
+    };
 }

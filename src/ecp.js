@@ -1321,5 +1321,7 @@ var ECP = function(ctx) {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.ECP = ECP;
+    module.exports = {
+        ECP: ECP
+    };
 }

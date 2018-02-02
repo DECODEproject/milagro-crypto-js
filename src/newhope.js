@@ -147,5 +147,7 @@ var NewHope = function() {
 };
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
-    module.exports.NewHope = NewHope;
+    module.exports = {
+        NewHope: NewHope
+    };
 }
