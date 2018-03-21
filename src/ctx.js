@@ -17,6 +17,13 @@
     under the License.
 */
 
+const require_method = require;
+
+// Prevent React Native packager from seeing modules required with this
+function nodeRequire(module) {
+    return require_method(module);
+}
+
 
 var CTX = function(input_parameter) {
     "use strict";
@@ -24,6 +31,7 @@ var CTX = function(input_parameter) {
     var ctx = this,
         CTXLIST,
         prepareModule;
+
 
     CTXLIST = {
         "ED25519": {
@@ -381,6 +389,7 @@ var CTX = function(input_parameter) {
         },
     };
 
+
     prepareModule = function (moduleName, fileName, propertyName) {
         if (!propertyName) {
             propertyName = moduleName;
@@ -391,7 +400,7 @@ var CTX = function(input_parameter) {
                 fileName = moduleName.toLowerCase();
             }
 
-            ctx[propertyName] = require("./" + fileName)[moduleName](ctx);
+            ctx[propertyName] = nodeRequire("./" + fileName)[moduleName](ctx);
         } else {
             ctx[propertyName] = window[moduleName](ctx);
         }
