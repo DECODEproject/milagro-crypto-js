@@ -400,22 +400,23 @@ var CTX = function(input_parameter) {
                 fileName = moduleName.toLowerCase();
             }
 
+            console.log("Require: ctx['" + propertyName + "'] = require(\"./" + fileName + "\")[\"" + moduleName + "\"](ctx);");
             ctx[propertyName] = nodeRequire("./" + fileName)[moduleName](ctx);
         } else {
             ctx[propertyName] = window[moduleName](ctx);
         }
     };
 
-    prepareModule("AES");
-    prepareModule("GCM");
-    prepareModule("UInt64");
-    prepareModule("HASH256");
-    prepareModule("HASH384");
-    prepareModule("HASH512");
-    prepareModule("SHA3");
-    prepareModule("RAND");
-    prepareModule("NewHope");
-    prepareModule("NHS");
+    ctx['AES'] = require("./aes")["AES"](ctx);
+    ctx['GCM'] = require("./gcm")["GCM"](ctx);
+    ctx['UInt64'] = require("./uint64")["UInt64"](ctx);
+    ctx['HASH256'] = require("./hash256")["HASH256"](ctx);
+    ctx['HASH384'] = require("./hash384")["HASH384"](ctx);
+    ctx['HASH512'] = require("./hash512")["HASH512"](ctx);
+    ctx['SHA3'] = require("./sha3")["SHA3"](ctx);
+    ctx['RAND'] = require("./rand")["RAND"](ctx);
+    ctx['NewHope'] = require("./newhope")["NewHope"](ctx);
+    ctx['NHS'] = require("./nhs")["NHS"](ctx);
 
     if (typeof input_parameter === "undefined") {
         return;
@@ -423,34 +424,37 @@ var CTX = function(input_parameter) {
 
     ctx.config = CTXLIST[input_parameter];
 
-    prepareModule("BIG");
-    prepareModule("DBIG", "big");
+    ctx['BIG'] = require("./big")["BIG"](ctx);
+    ctx['DBIG'] = require("./big")["DBIG"](ctx);
 
     // Set RSA parameters
     if (typeof ctx.config["TFF"] !== "undefined") {
-        prepareModule("FF");
-        prepareModule("RSA");
-        prepareModule("rsa_public_key", "rsa");
-        prepareModule("rsa_private_key", "rsa");
+        ctx['FF'] = require("./ff")["FF"](ctx);
+        ctx['RSA'] = require("./rsa")["RSA"](ctx);
+        ctx['rsa_public_key'] = require("./rsa")["rsa_public_key"](ctx);
+        ctx['rsa_private_key'] = require("./rsa")["rsa_private_key"](ctx);
         return;
     }
 
     // Set Elliptic Curve parameters
     if (typeof ctx.config["CURVE"] !== "undefined") {
-        prepareModule("ROM_CURVE_" + ctx.config["CURVE"], "rom_curve", "ROM_CURVE");
-        prepareModule("ROM_FIELD_" + ctx.config["FIELD"], "rom_field", "ROM_FIELD");
+        ctx['ROM_CURVE'] = require("./rom_curve")["ROM_CURVE_NIST256"](ctx);
+        ctx['ROM_FIELD'] = require("./rom_field")["ROM_FIELD_NIST256"](ctx);
+        //prepareModule("ROM_CURVE_" + ctx.config["CURVE"], "rom_curve", "ROM_CURVE");
+        //prepareModule("ROM_FIELD_" + ctx.config["FIELD"], "rom_field", "ROM_FIELD");
 
-        prepareModule("FP");
-        prepareModule("ECP");
-        prepareModule("ECDH");
+        ctx['FP'] = require("./fp")["FP"](ctx);
+        ctx['ECP'] = require("./ecp")["ECP"](ctx);
+        ctx['ECDH'] = require("./ecdh")["ECDH"](ctx);
 
         if (ctx.config["@PF"] != 0) {
-            prepareModule("FP2");
-            prepareModule("FP4");
-            prepareModule("FP12");
-            prepareModule("ECP2");
-            prepareModule("PAIR");
-            prepareModule("MPIN");
+            ctx['FP2'] = require("./fp2")["FP2"](ctx);
+            ctx['FP4'] = require("./fp4")["FP4"](ctx);
+            ctx['FP12'] = require("./fp12")["FP12"](ctx);
+            ctx['ECP2'] = require("./ecp2")["ECP2"](ctx);
+            ctx['PAIR'] = require("./pair")["PAIR"](ctx);
+            ctx['MPIN'] = require("./mpin")["MPIN"](ctx);
+
         }
 
         return;
